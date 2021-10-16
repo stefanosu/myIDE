@@ -6,7 +6,6 @@ export const unpkgPathPlugin = () => {
     setup(build: ebuild.PluginBuild) {
       //Handle root entry file of index.js
       build.onResolve({ filter: /.*/ }, async (args: any) => {
-        console.log('onResolve', args);
         if (args.path === 'index.js') {
           return { path: args.path, namespace: 'a' };
         }
