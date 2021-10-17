@@ -20,11 +20,3 @@ export const unpkgPathPlugin = () => {
     },
   };
 };
-//         return {
-//           namespace: 'a',
-//           path: `https://unpkg.com/${args.path}`,
-//         };
-//       });
-//     },
-//   };
-// }
