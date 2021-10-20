@@ -1,1 +1,3 @@
-# MY IDE 
+### MY IDE
+
+# Technologies used are react and TypeScript
