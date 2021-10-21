@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import * as esbuild from 'esbuild-wasm';
 import ReactDOM from 'react-dom';
 import { useState, useEffect, useRef } from 'react';
@@ -33,10 +34,10 @@ const App = () => {
       },
     });
     setCode(result.outputFiles[0].text);
-
-    const html = `
-    <script>${code}</script>`
   };
+
+  const html = `
+  <script>${code}</script>`;
 
   return (
     <div>
@@ -48,12 +49,9 @@ const App = () => {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe sandbox="" srcDoc={html} />
+      <iframe sandbox="allow-scripts" srcDoc={html} />
     </div>
   );
 };
-
-const html = `<h1> Local HTML doc </h1>
-`;
 
 ReactDOM.render(<App />, document.querySelector('#root'));
