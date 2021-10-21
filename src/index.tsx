@@ -35,7 +35,7 @@ const App = () => {
       },
     });
     // setCode(result.outputFiles[0].text);
-    iframe.current.postMessage(result.outputFiles[0].text, '*');
+    iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
   };
 
   const html = `
@@ -45,8 +45,8 @@ const App = () => {
       <div id="root"></div>
       <script> 
         window.addEventListener('message', (event) => {
-          console.log(event.data)
-        })
+          eval(event.data)
+        }, false)
       </script>
     </body>
     </html>
