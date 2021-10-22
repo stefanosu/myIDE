@@ -49,7 +49,7 @@ const App = () => {
             eval(event.data)
           } catch (err) {
             const root = document.querySelector('#root');
-            root.innerHTML = '<div>' + err + '</div>'
+            root.innerHTML = '<div style="color: red"><h4>Runtime Error</h4>' + err + '</div>'
             }
           }, false)
       </script>
